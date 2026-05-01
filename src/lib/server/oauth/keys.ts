@@ -1,5 +1,6 @@
 import { JoseKey } from '@atproto/jwk-jose';
 import { env } from '$env/dynamic/private';
+import { toPublicJwks } from './public-jwks';
 
 let cached: Promise<JoseKey[]> | null = null;
 
@@ -20,17 +21,5 @@ export function getKeyset(): Promise<JoseKey[]> {
 }
 
 export async function getPublicJwks() {
-	const keyset = await getKeyset();
-	return {
-		keys: keyset.map((k) => {
-			const jwk = { ...(k.jwk as Record<string, unknown>) };
-			delete jwk.d;
-			delete jwk.p;
-			delete jwk.q;
-			delete jwk.dp;
-			delete jwk.dq;
-			delete jwk.qi;
-			return jwk;
-		})
-	};
+	return toPublicJwks(await getKeyset());
 }

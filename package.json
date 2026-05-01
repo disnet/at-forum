@@ -14,7 +14,7 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test": "vitest run",
-		"generate-jwks": "node --experimental-strip-types scripts/generate-jwks.ts"
+		"generate-jwks": "node scripts/generate-jwks.js"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-node": "^5.5.4",
