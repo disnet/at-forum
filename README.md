@@ -3,6 +3,10 @@
 A minimal SvelteKit app demonstrating sign-in with [atproto OAuth](https://atproto.com/specs/oauth)
 using [`@atproto/oauth-client-node`](https://www.npmjs.com/package/@atproto/oauth-client-node).
 
+This skeleton is the Phase 0 starting point for an atproto-native
+alt-frontend for `discourse.atprotocol.community`. See [DESIGN.md](./DESIGN.md)
+for the project sketch.
+
 ## Stack
 
 - SvelteKit (skeleton, TypeScript) with `@sveltejs/adapter-node`.
